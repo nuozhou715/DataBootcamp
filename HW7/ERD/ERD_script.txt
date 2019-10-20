@@ -1,0 +1,41 @@
+employees
+-
+emp_no PK int
+birth_date date
+first_name string
+last_name string
+gender string
+hire_date date
+
+salaries
+-
+emp_no int PK FK >- employees.emp_no
+salary int
+from_date date
+to_date date
+
+titles
+-
+emp_no int Pk FK >- employees.emp_no
+title string
+from_date date
+to_date date
+
+departments
+-
+dept_no string PK
+dept_name string
+
+dept_manager
+-
+dept_no string FK >- departments.dept_no
+emp_no int FK >- employees.emp_no FK >- dept_emp.emp_no
+from_date date
+to_date date
+
+dept_emp
+-
+emp_no int FK >- employees.emp_no
+dept_no string FK >- departments.dept_no
+from_date date
+to_date date
